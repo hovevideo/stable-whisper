@@ -1,0 +1,11 @@
+__pycache__ 
+*.pyc
+.ipynb_checkpoints
+.cog
+*.json
+*.ass
+*.mp4
+*.wav
+*.txt
+*.png
+*.None
