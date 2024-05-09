@@ -16,7 +16,6 @@ def cleanup_json_fields(file):
     segment_fields_to_keep = ["start", "end", "text"]
     with open(file, "r", encoding="utf-8") as f:
         data = json.load(f)
-        print(data["text"])
         for segment in list(data):
             if segment in root_fields_to_delete:
                 del data[segment]
@@ -56,6 +55,8 @@ class Predictor(BasePredictor):
 
         """Run a single transcription on the model"""
         result = self.model.transcribe(f"{filename}.{extension}")
+
+        print("✅ transcription complete")
 
         # TODO arg
         result.split_by_length(max_words=4)
